@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int numberOfSteps(int num, int counter = 0) {
+        if(num != 0){
+            if(num%2 == 0){
+            counter += 1;
+            num = num/2;
+            }
+            else{
+                counter += 1;
+                num -=1;
+            }    
+            return(numberOfSteps(num, counter));
+        }
+        else{
+            return(counter);
+        }
+    }
+};
