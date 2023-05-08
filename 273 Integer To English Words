@@ -1,0 +1,172 @@
+#include <string>
+class Solution {
+public:
+    string numberToWords(int num) {
+            if(num == 0){
+                return("Zero");
+            }
+        string stringreturn = "";
+        if(num%1000000000 < num){
+            int count = 0;
+            while(num >= 1000000000){
+                count +=1;
+                num -= 1000000000;
+            }
+            stringreturn.append(numberToWords(count) + " Billion ");
+        }
+        if(num%100000000 < num){
+            int count = 0;
+            while(num >= 100000000){
+                count +=1;
+                num -= 100000000;
+            }
+            stringreturn.append(numberToWords(count) + " Hundred ");
+            if (num%100000000 < 1000000){
+                stringreturn.append("Million ");
+            }
+        }
+        if(num%1000000 < num){
+            int count = 0;
+            while(num >= 1000000){
+                count +=1;
+                num -= 1000000;
+            }
+            stringreturn.append(numberToWords(count) + " Million ");
+        }
+        if(num%100000 < num){
+            int count = 0;
+            while(num >= 100000){
+                count +=1;
+                num -= 100000;
+            }
+            stringreturn.append(numberToWords(count) + " Hundred ");
+            if (num%100000 < 1000){
+                stringreturn.append("Thousand ");
+            }
+        }
+        if(num%1000 < num){
+            int count = 0;
+            while(num >= 1000){
+                count +=1;
+                num -= 1000;
+            }
+            stringreturn.append(numberToWords(count) + " Thousand ");
+        }
+        if(num%100 < num){
+            int count = 0;
+            while(num >= 100){
+                count +=1;
+                num -= 100;
+            }
+            stringreturn.append(numberToWords(count) + " Hundred ");
+        }
+        if(num%20 < num){
+            int count = 0;
+            while(num >= 20){
+                count +=1;
+                num -= 10;
+            }
+            num -=10;
+            if(count > 0){
+                if(count == 1){
+                    stringreturn.append("Twenty ");
+                }
+                if(count == 2){
+                    stringreturn.append("Thirty ");
+                }
+                if(count == 3){
+                    stringreturn.append("Forty ");
+                }
+                if(count == 4){
+                    stringreturn.append("Fifty ");
+                }
+                if(count == 5){
+                    stringreturn.append("Sixty ");
+                }
+                if(count == 6){
+                    stringreturn.append("Seventy ");
+                }
+                if(count == 7){
+                    stringreturn.append("Eighty ");
+                }
+                if(count == 8){
+                    stringreturn.append("Ninety ");
+                }
+            }
+
+        }
+        if(num%20 == num){
+            int count = 0;
+            if(num%10 < num){
+                    if(num == 10){
+                    stringreturn.append("Ten");
+                    }
+                    if(num == 11){
+                    stringreturn.append("Eleven");
+                    }
+                    if(num == 12){
+                    stringreturn.append("Twelve");
+                    }
+                    if(num == 13){
+                    stringreturn.append("Thirteen");
+                    }
+                    if(num == 14){
+                    stringreturn.append("Fourteen");
+                    }
+                    if(num == 15){
+                    stringreturn.append("Fifteen");
+                    }
+                    if(num == 16){
+                    stringreturn.append("Sixteen");
+                    }
+                    if(num == 17){
+                    stringreturn.append("Seventeen");
+                    }
+                    if(num == 18){
+                    stringreturn.append("Eighteen");
+                    }
+                    if(num == 19){
+                    stringreturn.append("Nineteen");
+                    }
+            }
+                else{
+                    
+                    if(num == 1){
+                    stringreturn.append("One");
+                    }
+                    if(num == 2){
+                    stringreturn.append("Two");
+                    }
+                    if(num == 3){
+                    stringreturn.append("Three");
+                    }
+                    if(num == 4){
+                    stringreturn.append("Four");
+                    }
+                    if(num == 5){
+                    stringreturn.append("Five");
+                    }
+                    if(num == 6){
+                    stringreturn.append("Six");
+                    }
+                    if(num == 7){
+                    stringreturn.append("Seven");
+                    }
+                    if(num == 8){
+                    stringreturn.append("Eight");
+                    }
+                    if(num == 9){
+                    stringreturn.append("Nine");
+                    }
+                    if(num == 10){
+                    stringreturn.append("Ten");
+                    }
+                }
+        }
+        if(isspace(stringreturn[stringreturn.length()-1])){
+            stringreturn.erase(stringreturn.length()-1);
+        }
+        return(stringreturn);
+        
+    }
+};
