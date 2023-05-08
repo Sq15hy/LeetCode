@@ -1,0 +1,75 @@
+#include <string>
+class Solution {
+public:
+    string intToRoman(int num, string arr = "") {
+        while(num > 0){
+            if(num >=1000){
+                arr.append("M");
+                num -= 1000;
+                continue;
+            }
+            else if(num >= 900){
+                arr.append("CM");
+                num-= 900;
+                continue;
+            }
+            else if(num >= 500){
+                arr.append("D");
+                num-=500;
+                continue;
+            }
+            else if(num >= 400){
+                arr.append("CD");
+                num-=400;
+                continue;
+            }
+            else if(num >= 100){
+                arr.append("C");
+                num-=100;
+                continue;
+            }
+            else if(num >= 90){
+                arr.append("XC");
+                num-=90;
+                continue;
+            }
+            else if(num >= 50){
+                arr.append("L");
+                num-=50;
+                continue;
+            }
+            else if(num >= 40){
+                arr.append("XL");
+                num-=40;
+                continue;
+            }
+            else if(num >= 10){
+                arr.append("X");
+                num-=10;
+                continue;
+            }
+            else if(num >= 9){
+                arr.append("IX");
+                num-=9;
+                continue;
+            }
+            else if(num >= 5){
+                arr.append("V");
+                num-=5;
+                continue;
+            }
+            else if(num >= 4){
+                arr.append("IV");
+                num-=4;
+                continue;
+            }
+            else if(num >= 1){
+                arr.append("I");
+                num-=1;
+                continue;
+            }
+        }
+        return(arr);
+        
+    }
+};
