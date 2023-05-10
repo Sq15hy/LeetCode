@@ -1,0 +1,19 @@
+// equal to the highest previous square sqr(70) = sqr(64)
+class Solution {
+public:
+    int mySqrt(int x) {
+        int y = 0;
+        int z = 0;
+        do{
+            z += 1;
+            y = z * z;
+            
+        }
+        while(y < x & z != 46340);
+        if(y > x){
+            return(z-1);
+        }
+        return(z);
+        
+    }
+};
